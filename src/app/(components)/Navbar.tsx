@@ -11,21 +11,25 @@ const Navbar = () => {
         {
             id: 1,
             link: "Home",
+            path: "/",
             icon: <FaHome />
         },
         {
             id: 2,
             link: "CreateNewTicket",
-            icon: <FaTicketAlt/>
+            path: "/Complaints/new",
+            icon: <FaTicketAlt />
         },
         {
             id: 3,
             link: "Login",
+            path: "/login",
             icon: <BiLogIn />
         },
         {
             id: 4,
             link: "Signup",
+            path: "/signup",
             icon: <BiLogOut />
         },
     ];
@@ -59,16 +63,16 @@ const Navbar = () => {
 
 
             <ul className="hidden md:flex">
-                {links.map(({ id, link, icon }) => (
-                    <li
-                        key={id}
-                        className="nav-links mr-10 px-4 cursor-pointer capitalize text-lg text-gray-500 hover:scale-105 hover:text-yellow-600 duration-200 link-underline"
-                    >
-                        <div className="text-lg text-white">{icon}</div>
-                        {link === "Home" ? <Link href="/">{link}</Link> : <Link href={link}>{link}</Link>}
-                    </li>
-                ))}
-            </ul>
+      {links.map(({ id, link, path , icon }) => (
+        <li
+          key={id}
+          className="nav-links mr-10 px-4 cursor-pointer capitalize text-lg text-gray-500 hover:scale-105 hover:text-yellow-600 duration-200 link-underline"
+        >
+          <div className="text-lg text-white">{icon}</div>
+           <Link href={path}>{link}</Link>
+        </li>
+      ))}
+    </ul>
 
             <div
                 onClick={() => setNav(!nav)}
