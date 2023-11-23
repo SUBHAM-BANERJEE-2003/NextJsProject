@@ -1,6 +1,6 @@
 "use client";
 
-import { faX } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
 
@@ -18,8 +18,8 @@ const DeleteBlock = ({ id }) => {
 
   return (
     <FontAwesomeIcon
-      icon={faX}
-      className=" text-red-400 hover:cursor-pointer hover:text-red-200"
+      icon={faTrash}
+      className=" text-red-400 text-xl hover:cursor-pointer hover:text-red-200 hover:scale-105"
       onClick={deleteTicket}
     />
   );
